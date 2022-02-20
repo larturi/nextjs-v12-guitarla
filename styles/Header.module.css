@@ -1,0 +1,10 @@
+ .header {
+     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('../public/img/header.jpg');
+     padding: 5rem  0;
+     background-size: cover;
+     background-position: 50%;
+ }
+
+ .navegacion a {
+     color: white;
+ }
