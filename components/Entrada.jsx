@@ -8,11 +8,12 @@ const Entrada = ({ entrada }) => {
   
   const { titulo, resumen, imagen, published_at, id } = entrada;
   return (
-    <article>
+    <article className={styles.article}>
         <Image 
             width={800}
             height={600}
             layout='responsive'
+            priority='true'
             src={imagen.url} 
             alt={`Imagen Blog ${titulo}`} 
         />
