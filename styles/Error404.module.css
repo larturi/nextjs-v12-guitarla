@@ -1,0 +1,10 @@
+.content {
+    height: calc(100vh - 15rem);
+    display: flex;
+    justify-content: center;
+}
+
+.error {
+    font-size: 7rem;
+    color: var(--primary);
+}

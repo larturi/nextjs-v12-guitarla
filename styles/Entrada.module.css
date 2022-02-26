@@ -2,6 +2,11 @@
     border: solid 1px var(--primary);
 }
 
+.entrada {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
 .contenido {
     padding: 2rem;
 }
@@ -49,4 +54,8 @@
 .enlace:hover {
     color: var(--primary);
     background-color: var(--blanco);
+}
+
+.texto {
+    white-space: pre-wrap;
 }
