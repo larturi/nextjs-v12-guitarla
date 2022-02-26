@@ -13,7 +13,7 @@ const EntradaBlog = ({ entrada }) => {
     const { titulo, contenido, imagen, published_at } = entrada;
 
     return (
-        <Layout pagina='Blog'>
+        <Layout pagina={titulo}>
             <main className="contenedor">
                 <h1 className="heading">{titulo}</h1>
                 <article className={styles.entrada}>
@@ -34,10 +34,10 @@ const EntradaBlog = ({ entrada }) => {
     )
 }
 
-export async function getServerSideProps({ query: { id } }) {
+export async function getServerSideProps({ query: { url } }) {
 
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/blogs/${id}`;
-    const response = await fetch(url);
+    const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/blogs?url=${url}`;
+    const response = await fetch(apiUrl);
 
     if(response.status === 404) {
         return {
@@ -50,7 +50,7 @@ export async function getServerSideProps({ query: { id } }) {
         const data = await response.json();
         return {
             props: {
-                entrada: data
+                entrada: data[0]
             }
         }
     }
