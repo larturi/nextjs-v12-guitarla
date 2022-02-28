@@ -45,3 +45,38 @@
     background-color: var(--blanco);
     color: var(--primary);
 }
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario label {
+    font-size: 2.2rem;
+    color: var(--primary);
+}
+
+.formulario select {
+    border: 2px solid var(--primary);
+    padding: 1.6rem;
+    color: var(--primary);
+    text-align: center;
+}
+
+.formulario input[type="submit"] {
+    margin-top: 1.3rem;
+    display: block;
+    background-color: var(--primary);
+    text-transform: uppercase;
+    padding: 2rem;
+    border: none;
+    color: var(--blanco);
+    font-weight: 700;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: var(--negro);
+    cursor: pointer;
+}
