@@ -3,6 +3,7 @@
      padding: 5rem 0;
      background-size: cover;
      background-position: 50%;
+     position: relative;
  }
  
  .navegacion a {
@@ -26,6 +27,8 @@
      margin-top: 5rem;
      display: flex;
      gap: 2rem;
+     position: relative;
+     z-index: 1;
  }
  
  @media (min-width: 768px) {
@@ -101,4 +104,17 @@
 .enlace:hover {
     color: var(--primary);
     background-color: var(--blanco);
+}
+
+.guitarra {
+    display: none;
+}
+
+@media(min-width: 992px) {
+    .guitarra {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -9px;
+    }
 }

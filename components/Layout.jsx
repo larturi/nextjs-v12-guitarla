@@ -16,10 +16,8 @@ const Layout = ({ children, pagina, guitarra }) => {
 
             <link rel='preconnect' href='https://fonts.googleapis.com' />
             <link rel='preconnect' href='https://fonts.gstatic.com' />
-            <link
-               href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Raleway:wght@400;700;900&family=Staatliches&display=swap'
-               rel='stylesheet'
-            />
+            {/* <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Raleway:wght@400;700;900&family=Staatliches&display=swap"  /> */}
+
          </Head>
 
          <Header guitarra={guitarra} />
