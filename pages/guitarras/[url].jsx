@@ -1,9 +1,29 @@
+import { useState } from 'react';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
 import styles from '../../styles/Guitarra.module.css';
 
-const GuitarraDetail = ({ guitarra }) => {
-   const { nombre, descripcion, precio, imagen } = guitarra[0];
+const GuitarraDetail = ({ guitarra, addCarrito }) => {
+
+   const [cantidad, setCantidad] = useState(1);
+
+   const { nombre, descripcion, precio, imagen, id } = guitarra[0];
+
+   const handleSubmit = e => {
+      e.preventDefault();
+      
+      if (cantidad > 0) {
+         const guitarraSeleccionada = {
+           id,
+           imagen: imagen.url,
+           nombre,
+           precio,
+           cantidad
+         }
+         addCarrito(guitarraSeleccionada);
+      }
+      
+   };
 
    return (
       <Layout pagina={`Guitarra ${nombre}`}>
@@ -20,9 +40,12 @@ const GuitarraDetail = ({ guitarra }) => {
                <p className={styles.descripcion}>{descripcion}</p>
                <p className={styles.precio}>${precio}</p>
 
-               <form className={styles.formulario}>
+               <form className={styles.formulario} onSubmit={handleSubmit}>
                   <label>Cantidad:</label>
-                  <select>
+                  <select 
+                     value={cantidad}
+                     onChange={e => setCantidad(parseInt(e.target.value))}
+                  >
                      <option value=''>-- Seleccione -- </option>
                      <option value='1'>1</option>
                      <option value='2'>2</option>
