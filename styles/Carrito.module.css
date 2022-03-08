@@ -35,6 +35,17 @@
     font-size: 2.2rem;
 }
 
+.cantidad {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cantidad p {
+    margin: 0;
+}
+
 .precio {
     font-weight: 700;
     color: var(--primary);
@@ -46,4 +57,13 @@
 
 .subtotal {
     font-weight: 700;
+}
+
+.select {
+    all: unset;
+    padding: .8rem;
+    border: 1px solid var(--gris);
+    width: 40px;
+    text-align: center;
+    border-radius: 3px;
 }
