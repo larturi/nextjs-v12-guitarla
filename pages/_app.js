@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }) {
 
     useEffect(() => {
         const carritoLS = JSON.parse(localStorage.getItem('carrito')) || [];
-        console.log(carritoLS);
         setCarrito(carritoLS);
     }, []);
 
@@ -31,6 +30,11 @@ function MyApp({ Component, pageProps }) {
         }
     };
 
+    const removeCarrito = id => {
+        const carritoActualizado = carrito.filter(articulo => articulo.id !== id);
+        setCarrito(carritoActualizado);
+    };
+
     const actualizarCantidad = producto => {
         const carritoActualizado = carrito.map(articulo => {
             if (articulo.id === producto.id) {
@@ -42,11 +46,16 @@ function MyApp({ Component, pageProps }) {
         setCarrito(carritoActualizado);
     }
 
+    const eliminarProductoCarrito = id => {
+        removeCarrito(id);
+    }
+
     return ( <
         Component {...pageProps }
         carrito = { carrito }
         addCarrito = { addCarrito }
         actualizarCantidad = { actualizarCantidad }
+        eliminarProductoCarrito = { eliminarProductoCarrito }
         />
     );
 
