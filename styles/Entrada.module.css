@@ -1,5 +1,7 @@
 .article {
-    border: solid 1px var(--primary);
+    border: solid .8px var(--gris);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .entrada {
@@ -44,7 +46,7 @@
     font-size: 1.2rem;
     font-weight: 900;
     padding: 1rem 5rem;
-    border: 2px solid var(--primary);
+    border: none;
     transition-property: background-color;
     transition-duration: .3s;
     background-color: var(--primary);

@@ -3,6 +3,11 @@
     gap: 4rem;
 }
 
+.imagen {
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
 @media (min-width:768px) {
     .contenido {
         grid-template-columns: repeat(2, 1fr);

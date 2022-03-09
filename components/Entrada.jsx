@@ -14,7 +14,7 @@ const Entrada = ({ entrada }) => {
             layout='responsive'
             priority='true'
             src={imagen.url} 
-            alt={`Imagen Blog ${titulo}`} 
+            alt={`Imagen Blog ${titulo}`}
         />
 
         <div className={styles.contenido}>

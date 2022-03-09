@@ -10,7 +10,9 @@ const Nosotros = () => {
 
             <div className={styles.contenido}>
 
-               <Image layout='responsive' width={600} height={450} src='/img/nosotros.jpg' alt='Imagen Nosotros' />
+               <div className={styles.imagen}>
+                  <Image layout='responsive' width={600} height={450} src='/img/nosotros.jpg' alt='Imagen Nosotros' />
+               </div>
 
                <div>
                   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum repudiandae error voluptates obcaecati sint vitae! Ad quis culpa placeat in dolor totam quo architecto. Excepturi minima voluptatibus eum magnam asperiores aspernatur ullam, in adipisci tempora velit, quisquam dolorum quia corporis!</p>

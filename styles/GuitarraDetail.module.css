@@ -1,20 +1,24 @@
 .guitarra {
     display: grid;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 4fr;
     column-gap: 1rem;
     align-items: center;
     max-width: 70rem;
     margin: 0 auto;
-    border: solid .8px var(--gris);
     border-radius: 1rem;
     padding: 0 2rem;
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 4rem;
     text-transform: uppercase;
     text-align: center;
     padding: 0;
+    margin: 0;
+}
+
+.title h3 {
+    margin: 0;
 }
 
 .content {
@@ -55,6 +59,8 @@
     transition-duration: .3s;
     color: var(--blanco);
 }
+
+
 
 .formulario {
     display: flex;

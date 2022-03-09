@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
-import styles from '../../styles/Guitarra.module.css';
+import styles from '../../styles/GuitarraDetail.module.css';
 
 const GuitarraDetail = ({ guitarra, addCarrito }) => {
 
@@ -28,34 +28,40 @@ const GuitarraDetail = ({ guitarra, addCarrito }) => {
    return (
       <Layout pagina={`Guitarra ${nombre}`}>
          <div className={styles.guitarra}>
-            <Image
-               layout='responsive'
-               src={imagen.url}
-               alt={`Image of ${nombre}`}
-               width={180}
-               height={350}
-            />
-            <div className={styles.contenido}>
+            <div className={styles.title}>
                <h3>{nombre}</h3>
-               <p className={styles.descripcion}>{descripcion}</p>
-               <p className={styles.precio}>${precio}</p>
+            </div>
 
-               <form className={styles.formulario} onSubmit={handleSubmit}>
-                  <label>Cantidad:</label>
-                  <select 
-                     value={cantidad}
-                     onChange={e => setCantidad(parseInt(e.target.value))}
-                  >
-                     <option value=''>-- Seleccione -- </option>
-                     <option value='1'>1</option>
-                     <option value='2'>2</option>
-                     <option value='3'>3</option>
-                     <option value='4'>4</option>
-                     <option value='5'>5</option>
-                  </select>
+            <div className={styles.content}>
+               <Image
+                  layout='responsive'
+                  src={imagen.url}
+                  alt={`Image of ${nombre}`}
+                  width={160}
+                  height={320}
+               />
+               <div className={styles.contenido}>
+                  
+                  <p className={styles.descripcion}>{descripcion}</p>
+                  <p className={styles.precio}>${precio}</p>
 
-                  <input type='submit' value='Agregar al carrito' />
-               </form>
+                  <form className={styles.formulario} onSubmit={handleSubmit}>
+                     <label>Cantidad:</label>
+                     <select 
+                        value={cantidad}
+                        onChange={e => setCantidad(parseInt(e.target.value))}
+                     >
+                        <option value=''>-- Seleccione -- </option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                        <option value='5'>5</option>
+                     </select>
+
+                     <input type='submit' value='Agregar al carrito' />
+                  </form>
+               </div>
             </div>
          </div>
       </Layout>
