@@ -8,6 +8,7 @@
  
  .navegacion a {
      color: white;
+     position: relative;
  }
  
  .barra {
@@ -36,6 +37,13 @@
          margin-top: 0;
      }
  }
+
+ @media (max-width: 768px) {
+    .navegacion {
+        flex-direction: column;
+        text-align: center;
+    }
+}
  
  .navegacion a {
      color: var(--blanco);
@@ -138,5 +146,31 @@
      100% {
          opacity: 1;
          transform: translateX(0rem);
+     }
+ }
+
+ .counter {
+    background: var(--blanco);
+    top: 0;
+    position: absolute;
+    right: 0;
+    padding: 4px;
+    font-size: 10px;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: auto;
+    color: var(--negro);
+    display: none;
+ }
+
+.activo {
+    display: block;
+}
+
+ @media(max-width: 768px) {
+     .counter {
+        right: 26px;
      }
  }

@@ -2,9 +2,10 @@ import Layout from '../components/Layout';
 import Image from 'next/image';
 import styles from '../styles/Nosotros.module.css'
 
-const Nosotros = () => {
+const Nosotros = ({carrito}) => {
+
    return (
-      <Layout pagina='Nosotros'>
+      <Layout pagina='Nosotros' carrito={carrito}>
          <main className='contenedor'>
             <h2 className='heading'>Nosotros</h2>
 

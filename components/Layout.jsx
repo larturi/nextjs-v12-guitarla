@@ -4,7 +4,8 @@ import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 
-const Layout = ({ children, pagina, guitarra }) => {
+const Layout = ({ children, pagina, guitarra, carrito }) => {
+
    return (
       <>
          <Head>
@@ -16,11 +17,9 @@ const Layout = ({ children, pagina, guitarra }) => {
 
             <link rel='preconnect' href='https://fonts.googleapis.com' />
             <link rel='preconnect' href='https://fonts.gstatic.com' />
-            {/* <link rel='stylesheet' href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Raleway:wght@400;700;900&family=Staatliches&display=swap"  /> */}
-
          </Head>
 
-         <Header guitarra={guitarra} />
+         <Header guitarra={guitarra} carrito={carrito} />
 
          {children}
 

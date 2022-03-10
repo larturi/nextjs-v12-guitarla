@@ -1,10 +1,10 @@
 import Entradas from '../components/Entradas';
 import Layout from '../components/Layout';
 
-const Blog = ({entradas}) => {
+const Blog = ({entradas, carrito}) => {
 
    return (
-      <Layout pagina='Blog'>
+      <Layout pagina='Blog' carrito={carrito}>
          <main className='contenedor'>
             <Entradas entradas={entradas} /> 
          </main>

@@ -14,7 +14,7 @@ const Carrito = ({ carrito, actualizarCantidad, eliminarProductoCarrito }) => {
   }, [carrito]);
 
   return (
-    <Layout pagina={'Carrito de Compras'}>
+    <Layout pagina={'Carrito de Compras'} carrito={carrito}>
         <h1 className="heading">Carrito</h1>
         <main className={`${styles.contenido} contenedor`}>
             <div className={styles.carrito}>

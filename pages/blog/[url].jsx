@@ -4,7 +4,7 @@ import { formatearFecha } from '../../helpers';
 
 import styles from '../../styles/Entrada.module.css';
 
-const EntradaBlog = ({ entrada }) => {
+const EntradaBlog = ({ entrada, carrito }) => {
 
     if (!entrada) {
         return;
@@ -13,7 +13,7 @@ const EntradaBlog = ({ entrada }) => {
     const { titulo, contenido, imagen, published_at } = entrada;
 
     return (
-        <Layout pagina={titulo}>
+        <Layout pagina={titulo} carrito={carrito}>
             <main className="contenedor">
                 <h1 className="heading">{titulo}</h1>
                 <article className={styles.entrada}>

@@ -1,10 +1,10 @@
 import Guitarras from '../components/Guitarras';
 import Layout from '../components/Layout';
 
-const Tienda = ({guitarras}) => {
+const Tienda = ({guitarras, carrito}) => {
 
    return (
-      <Layout pagina='Tienda'>
+      <Layout pagina='Tienda' carrito={carrito}>
          <main className='contenedor'>
             <h1 className='heading'>Nuestra Colección</h1>  
 

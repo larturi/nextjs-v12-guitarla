@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import styles from '../styles/Header.module.css';
 
-const Header = ({ guitarra }) => {
+const Header = ({ guitarra, carrito }) => {
 
    const router = useRouter();
 
@@ -38,6 +38,11 @@ const Header = ({ guitarra }) => {
                            src='/img/carrito.png'
                            alt='Imagen Carrito'
                         />
+                        <div 
+                           className={`${styles.counter} ${carrito?.length > 0 ? styles.activo : ''}`}
+                        >
+                           {carrito?.length}
+                        </div>
                      </a>
                   </Link>
                </nav>

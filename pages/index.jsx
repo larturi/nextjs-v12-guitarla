@@ -3,10 +3,12 @@ import Entradas from '../components/Entradas';
 import Guitarras from '../components/Guitarras';
 import Layout from '../components/Layout';
 
-export default function Home({ guitarras, cursos, entradas }) {
+export default function Home({ guitarras, cursos, entradas, carrito }) {
+
    return (
       <Layout
          pagina='Inicio'
+         carrito={carrito}
          guitarra={guitarras[3]}
       >
          <main className='contenedor'>
