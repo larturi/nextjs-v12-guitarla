@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, useMemo } from 'react';
 import CarritoContext from '../context/CarritoContext';
 
@@ -51,25 +52,19 @@ function MyApp({ Component, pageProps }) {
         removeCarrito(id);
     }
 
-    const setCarritoContext = (carrito) => {
-        setCarrito(carrito);
-     };
-
     const carritoData = useMemo(
         () => ({
             carrito,
-            setCarritoContext,
+            addCarrito,
+            actualizarCantidad,
+            eliminarProductoCarrito,
         }),
         [carrito]
      );
 
     return ( 
         <CarritoContext.Provider value={carritoData}>
-            <Component { ...pageProps }
-                addCarrito = { addCarrito }
-                actualizarCantidad = { actualizarCantidad }
-                eliminarProductoCarrito = { eliminarProductoCarrito }
-            />
+            <Component { ...pageProps } />
         </CarritoContext.Provider>
     );
 

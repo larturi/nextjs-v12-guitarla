@@ -5,11 +5,11 @@ import Image from "next/image";
 import useCarrito from '../hooks/useCarrito';
 import styles from '../styles/Carrito.module.css';
 
-const Carrito = ({ actualizarCantidad, eliminarProductoCarrito }) => {
+const Carrito = () => {
 
   const [total, setTotal] = useState(0);
 
-  const { carrito } = useCarrito();
+  const { carrito, actualizarCantidad, eliminarProductoCarrito } = useCarrito();
 
   useEffect(() => {
     if (carrito.length > 0) {

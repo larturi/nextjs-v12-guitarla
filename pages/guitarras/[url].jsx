@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Layout from '../../components/Layout';
+import useCarrito from '../../hooks/useCarrito';
 import styles from '../../styles/GuitarraDetail.module.css';
 
-const GuitarraDetail = ({ guitarra, addCarrito }) => {
+const GuitarraDetail = ({ guitarra }) => {
 
    const [cantidad, setCantidad] = useState(1);
+
+   const { addCarrito } = useCarrito();
 
    const { nombre, descripcion, precio, imagen, id } = guitarra[0];
 
