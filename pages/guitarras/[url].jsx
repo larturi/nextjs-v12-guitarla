@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../../components/Layout';
 import styles from '../../styles/GuitarraDetail.module.css';
 
-const GuitarraDetail = ({ guitarra, addCarrito, carrito }) => {
+const GuitarraDetail = ({ guitarra, addCarrito }) => {
 
    const [cantidad, setCantidad] = useState(1);
 
@@ -26,7 +26,7 @@ const GuitarraDetail = ({ guitarra, addCarrito, carrito }) => {
    };
 
    return (
-      <Layout pagina={`Guitarra ${nombre}`} carrito={carrito}>
+      <Layout pagina={`Guitarra ${nombre}`}>
          <div className={styles.guitarra}>
             <div className={styles.title}>
                <h3>{nombre}</h3>

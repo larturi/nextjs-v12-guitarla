@@ -2,24 +2,29 @@
 import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import Image from "next/image";
+import useCarrito from '../hooks/useCarrito';
 import styles from '../styles/Carrito.module.css';
 
-const Carrito = ({ carrito, actualizarCantidad, eliminarProductoCarrito }) => {
+const Carrito = ({ actualizarCantidad, eliminarProductoCarrito }) => {
 
   const [total, setTotal] = useState(0);
 
+  const { carrito } = useCarrito();
+
   useEffect(() => {
-    const calculoTotal = carrito.reduce( (total, producto) => total + (producto.precio * producto.cantidad), 0);
-    setTotal(calculoTotal);
+    if (carrito.length > 0) {
+      const calculoTotal = carrito.reduce( (total, producto) => total + (producto.precio * producto.cantidad), 0);
+      setTotal(calculoTotal);
+    }
   }, [carrito]);
 
   return (
-    <Layout pagina={'Carrito de Compras'} carrito={carrito}>
+    <Layout pagina={'Carrito de Compras'}>
         <h1 className="heading">Carrito</h1>
         <main className={`${styles.contenido} contenedor`}>
             <div className={styles.carrito}>
               <h2>Artículos</h2>
-                {carrito.length === 0 ? (
+               {carrito.length === 0 ? (
                     <div className={styles.vacio}>
                         <h2>No hay productos en el carrito</h2>
                         <p>Agrega productos al carrito para poder comprarlos</p>

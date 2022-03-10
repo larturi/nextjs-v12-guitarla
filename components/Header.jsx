@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import useCarrito from '../hooks/useCarrito';
 import styles from '../styles/Header.module.css';
 
-const Header = ({ guitarra, carrito }) => {
+const Header = ({ guitarra }) => {
 
    const router = useRouter();
+
+   const { carrito } = useCarrito();
 
    return (
       <header className={styles.header}>

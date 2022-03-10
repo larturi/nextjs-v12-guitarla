@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import CarritoContext from '../context/CarritoContext';
 
 import '../styles/normalize.css';
 import '../styles/globals.css';
@@ -50,13 +51,26 @@ function MyApp({ Component, pageProps }) {
         removeCarrito(id);
     }
 
-    return ( <
-        Component {...pageProps }
-        carrito = { carrito }
-        addCarrito = { addCarrito }
-        actualizarCantidad = { actualizarCantidad }
-        eliminarProductoCarrito = { eliminarProductoCarrito }
-        />
+    const setCarritoContext = (carrito) => {
+        setCarrito(carrito);
+     };
+
+    const carritoData = useMemo(
+        () => ({
+            carrito,
+            setCarritoContext,
+        }),
+        [carrito]
+     );
+
+    return ( 
+        <CarritoContext.Provider value={carritoData}>
+            <Component { ...pageProps }
+                addCarrito = { addCarrito }
+                actualizarCantidad = { actualizarCantidad }
+                eliminarProductoCarrito = { eliminarProductoCarrito }
+            />
+        </CarritoContext.Provider>
     );
 
 }
