@@ -5,6 +5,8 @@ import Layout from '../components/Layout';
 
 export default function Home({ guitarras, cursos, entradas }) {
 
+   console.log(cursos);
+
    return (
       <Layout
          pagina='Inicio'
@@ -16,7 +18,7 @@ export default function Home({ guitarras, cursos, entradas }) {
             <Guitarras guitarras={guitarras} />
          </main>
 
-         <Curso curso={cursos[0]} />
+         <Curso curso={cursos} />
 
          <section className='contenedor'>
             <Entradas entradas={entradas} />
